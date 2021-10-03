@@ -1,1 +1,1 @@
-# password-gen-ex1
+# Password-Generator-Project
