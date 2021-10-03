@@ -1,4 +1,5 @@
 import random
+from password_strength import PasswordStats
 
 def GeneratePassword(passwordLength, uppercase, lowercase, digit, special ):
 
@@ -37,6 +38,10 @@ def GeneratePassword(passwordLength, uppercase, lowercase, digit, special ):
         print("> Invalid password length, Please enter a number between 1-50")
         return
 
+def PasswordStrengthChecker(password):
+    stats = PasswordStats(password)
+
+    return  stats.strength()
 
 def main():
     print("> Hello, Welcome to: Password Generator ")
@@ -50,6 +55,7 @@ def main():
 
     if Password  != None:
         print(Password)
+        print("Your Password Strength is: {0:.0f}/100 ".format(PasswordStrengthChecker(Password) * 100))
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
